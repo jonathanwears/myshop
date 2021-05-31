@@ -1,0 +1,31 @@
+.product-card {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	height: 7rem;
+	width: 25rem;
+}
+
+.product-card:nth-child(1) >  .product-card-img {
+	border-top-style: none;
+
+}
+
+.product-card-img {
+	width: 10rem;
+	text-align: center;
+	border-style: solid;
+	border-width: .1rem;
+	border-bottom-style: none;
+	border-left-style:none;
+	overflow: hidden;
+}
+
+.product-card img {
+	max-width: 100%;
+    max-height: 100%;
+}
+
+.product-card-info h2 {
+	font-size: .75rem;
+	overflow: hidden;
+}

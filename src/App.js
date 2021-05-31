@@ -1,23 +1,17 @@
-import './App.css';
-import FilterTickList from './components/FilterTickList';
+import './css/App.css';
 import NavBar from "./components/NavBar";
-import Products from "./components/Products";
-import ProductsPage from "./components/ProductsPage";
+import Products from "./components/ProductArea/Products";
 
 function App() {
-
-
 
 
   return (
     <div>
       <NavBar />
-      <ProductsPage />
+      <Products />
     </div>
   )
 
 };
-
-
 
 export default App;
