@@ -1,16 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { getSingleProductData } from "../../utils/index.js";
 
-const firstProject = "comes from first product in mapped"
+function ExpandedProductInfo({ match }) {
 
-function ExpandedProductInfo({ firstpassedinfo }) {
-
-	const firstMount = useRef(true);
-
+	const productId = match.params.productId
 	const [product, setProduct] = useState()
-	const [productId, setProductId] = useState(1)
-
-
+	console.log(productId)
 	useEffect(() => {
 
 		async function fetchProduct() {
@@ -22,36 +17,18 @@ function ExpandedProductInfo({ firstpassedinfo }) {
 
 	}, [productId]);
 
+
+
 	return (
 		<div className="expanded-product-info">
-
-			{
-				product && (
-					<div>
-						{product.id}
-						{product.title}
-						<img src={product.image} alt={product.title}></img>
-						{product.price}
-					</div>
-				)
-
-
-
-
-
-
-
-
-
-
-			}
-
-
-
+			<div>
+				{product.id}
+				{product.title}
+				{/* <img src={product.image} alt={product.title}></img> */}
+				{product.price}
+			</div>
 		</div>
-
 	);
-
 };
 
 export default ExpandedProductInfo;
