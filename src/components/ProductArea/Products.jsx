@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import ProductCard from "./ProductCard";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { getProductData } from "../../utils";
 import ExpandedProductInfo from "./ExpandedProductInfo";
-import "../../css/ProductListings.css";
-import "../../css/ProductsArea.css";
 import FilterTickList from "./FilterTickList";
-
+import ProductListings from "./ProductListings";
+import "../../css/ProductsArea.css";
 
 function Products() {
 
@@ -14,9 +12,7 @@ function Products() {
 	const [filteredCatagories, setFilteredCatagories] = useState("");
 	
 	useEffect(() => {
-		console.log(filteredCatagories)
 		async function fetchProduct() {
-
 			const getData = await getProductData(filteredCatagories);
 			setProducts(getData)
 		};
@@ -25,26 +21,10 @@ function Products() {
 
 	return (
 		<div className="products-area">
-
 			<Router>
-				<div className="filter-tick-list">
-					<FilterTickList setFilteredCatagories={setFilteredCatagories}/>
-				</div>
-				<div className="product-listings">
-					{products && products.map((product, index) => {
-
-						return (
-							<>
-								<Link to={`/product/${product.id}`}>
-									<ProductCard key={product.id} {...product} />
-								</Link>
-							</>
-						)
-					})}
-
-				</div>
+				<FilterTickList setFilteredCatagories={setFilteredCatagories} />
+				<ProductListings products={products} />
 				<Route path="/product/:productId" component={ExpandedProductInfo} />
-
 			</Router>
 		</div>
 	)

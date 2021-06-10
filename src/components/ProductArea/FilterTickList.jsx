@@ -18,7 +18,8 @@ function FilterTickList({ setFilteredCatagories }) {
 	};
 
 	return (
-		<>
+		<div className="filter-tick-list">
+		
 			{
 				categories &&
 
@@ -34,7 +35,7 @@ function FilterTickList({ setFilteredCatagories }) {
 			}
 			<input key="no-selection" type="radio" value="" name="filterCatagories" onChange={handleOnChange} defaultChecked/>
 				none
-		</>
+		</div>
 	)
 };
 
