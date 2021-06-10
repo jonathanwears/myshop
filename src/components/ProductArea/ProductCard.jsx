@@ -1,7 +1,7 @@
 import React from "react";
 import "../../css/productCard.css";
 
-function ProductCard({ title, image, price, id}) {
+function ProductCard({ title, image, price }) {
 
 	return (
 

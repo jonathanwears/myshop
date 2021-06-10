@@ -1,0 +1,12 @@
+.expanded-product-info {
+	display: flex;
+	flex-direction: column;
+	border-style: solid;
+	align-items: center;
+	justify-content: center;
+}
+
+.expanded-product-info img {
+	width:20%;
+}
+

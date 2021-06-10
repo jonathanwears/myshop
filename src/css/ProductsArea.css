@@ -1,4 +1,11 @@
 .products-area {
-	display: flex;
-	flex-direction: row;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	height: 80vh;
+}
+
+.filter-tick-list {
+	grid-column: 1 / 3;
+	background-color: red;
+
 }

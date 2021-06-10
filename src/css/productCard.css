@@ -2,7 +2,7 @@
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	height: 7rem;
-	width: 25rem;
+	margin-right: 0;
 }
 
 .product-card:nth-child(1) >  .product-card-img {
@@ -10,7 +10,7 @@
 }
 
 .product-card-img {
-	width: 10rem;
+	width: 15rem;
 	text-align: center;
 	border-style: solid;
 	border-width: .1rem;
@@ -24,6 +24,10 @@
     max-height: 100%;
 }
 
+.product-card-info {
+	background-color: grey;
+	width: 100%;
+}
 .product-card-info h2 {
 	font-size: .75rem;
 	overflow: hidden;
