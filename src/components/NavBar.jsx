@@ -1,4 +1,5 @@
 import React from "react";
+import { Heading } from "@chakra-ui/react"
 
 function NavBar() {
 
@@ -6,10 +7,7 @@ function NavBar() {
 		<nav>
 			<ul>
 				<li>
-					<h1>ThingyShop</h1>
-				</li>
-				<li>
-					<h2>Cart</h2>
+					<Heading>ThingyShop</Heading>
 				</li>
 			</ul>
 		</nav>

@@ -1,6 +1,7 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
-import "../../css/ProductListings.css";
+import { Box } from "@chakra-ui/react";
 
 function ProductListings({ products }) {
 
@@ -8,10 +9,12 @@ function ProductListings({ products }) {
 
 		<div className="product-listings">
 			{products && products.map((product, index) => {
-
 				return (
 					<>
-						<Link to={`/product/${product.id}`}><ProductCard key={product.id} {...product} /></Link>
+						<Box border="1px">
+							<Link to={`/product/${product.id}`}><ProductCard key={product.id} {...product} /></Link>
+						</Box>
+
 					</>
 				)
 			})}
