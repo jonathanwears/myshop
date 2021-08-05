@@ -3,6 +3,7 @@ import { getSingleProductData } from "../../utils/index.js";
 import { Flex, Center } from "@chakra-ui/layout";
 import { Image } from "@chakra-ui/image";
 import { Box } from "@chakra-ui/react"
+import '../../css/ExpandedProductInfo.css';
 
 function ExpandedProductInfo({ match }) {
 
@@ -20,25 +21,14 @@ function ExpandedProductInfo({ match }) {
 
 	return (
 		<div className="expanded-product-info">
-
 			{product && <>
-				<Box border="1px" borderStyle="solid">
-				<Flex flexDirection="column" size="100%">
-					<Center w="100%" h="100%">
-						<Image boxSize="md" src={product.image} alt={product.title}></Image>
-						
-						<p>{product.id}</p>
-						<p>{product.title}</p>
-						<p>{product.description}</p>
-						<p>€{product.price}</p>
-						</Center>
-					</Flex>	
-				</Box>
-				
-					
+				<img src={product.image} alt={product.title}></img>
+				<p>{product.id}</p>
+				<p>{product.title}</p>
+				<p>{product.description}</p>
+				<p>€{product.price}</p>
+
 			</>}
-
-
 		</div>
 	);
 };

@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getCategories } from "../../utils/index.js";
-import { Flex } from "@chakra-ui/react";
-import { Radio, RadioGroup, Stack } from "@chakra-ui/react"
-
+import '../../css/FilterTickList.css';
 
 function FilterTickList({ setFilteredCatagories }) {
-
 	const [categories, setCategories] = useState();
 
 	useEffect(() => {
@@ -23,27 +20,19 @@ function FilterTickList({ setFilteredCatagories }) {
 	return (
 
 		<div className="filter-tick-list">
-			<Flex FlexDirection="row" width="100%">
-				<RadioGroup name="filterCatagories">
-					<Stack direction="row">
-						{
-							categories && categories.map((catagory, index) => {
-								return (
-									<>
-										<Radio key={catagory + index} value={catagory} onChange={handleOnChange} />
-										<p>{catagory}</p>
-									</>
-								)
-							})
-						}
-						<Radio key="no-selection" value="" onChange={handleOnChange} defaultChecked />
-						<p>none</p>
-					</Stack>
-
-				</RadioGroup>
-
-
-			</Flex>
+			<form>
+				{
+					categories && categories.map((catagory, index) => {
+						return (
+							<>
+								<input key={catagory + index} type="radio" value={catagory} onChange={handleOnChange}></input>
+								<p>{catagory}</p>
+							</>
+						)
+					})
+				}
+				<input key="no-selection" type="radio" value=""  checked="checked" onChange={handleOnChange}></input><p>none</p>
+			</form>
 		</div>
 	)
 };

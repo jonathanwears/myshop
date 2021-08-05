@@ -4,7 +4,7 @@ import { getProductData } from "../../utils";
 import ExpandedProductInfo from "./ExpandedProductInfo";
 import FilterTickList from "./FilterTickList";
 import ProductListings from "./ProductListings";
-import { Grid, GridItem } from "@chakra-ui/react";
+import '../../css/ProductsArea.css';
 
 function Products() {
 
@@ -22,21 +22,9 @@ function Products() {
 	return (
 		<div className="products-area">
 			<Router>
-				<Grid h="100vh"
-					templateColumns="repeat(5, 1fr)"
-					templateRows="repeat(2,1fr)"
-					gap={4}
-					>
-					<GridItem rowSpan={1} colSpan={5}>
-						<FilterTickList setFilteredCatagories={setFilteredCatagories} />
-					</GridItem>
-					<GridItem rowSpan={1} colSpan={2}>
-						<ProductListings products={products} />
-					</GridItem>
-					<GridItem rowSpan={1} colSpan={3}>
-						<Route path="/product/:productId" component={ExpandedProductInfo} />
-					</GridItem>
-				</Grid>
+				<FilterTickList setFilteredCatagories={setFilteredCatagories} />
+				<ProductListings products={products} />
+				<Route path="/product/:productId" component={ExpandedProductInfo} />
 			</Router>
 		</div>
 	)
