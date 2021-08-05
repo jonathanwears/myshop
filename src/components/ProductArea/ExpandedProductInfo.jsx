@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { getSingleProductData } from "../../utils/index.js";
-import { Flex, Center } from "@chakra-ui/layout";
-import { Image } from "@chakra-ui/image";
-import { Box } from "@chakra-ui/react"
 import '../../css/ExpandedProductInfo.css';
 
 function ExpandedProductInfo({ match }) {
