@@ -6,7 +6,7 @@ function NavBar() {
 		<nav>
 			<ul>
 				<li>
-					<h1>ThingyShop</h1>
+					<h1>My Shop</h1>
 				</li>
 			</ul>
 		</nav>
