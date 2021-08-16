@@ -21,17 +21,18 @@ function FilterTickList({ setFilteredCatagories }) {
 
 		<div className="filter-tick-list">
 			<form>
-				{
-					categories && categories.map((catagory, index) => {
-						return (
-							<>
-								<input key={catagory + index} type="radio" value={catagory} onChange={handleOnChange}></input>
-								<p>{catagory}</p>
-							</>
-						)
-					})
-				}
-				<input key="no-selection" type="radio" value=""  checked="checked" onChange={handleOnChange}></input><p>none</p>
+					{
+						categories && categories.map((catagory, index) => {
+							return (
+								<>
+									<input key={catagory + index} type="radio" name="catagory" value={catagory} onChange={handleOnChange}></input>
+									<label>{catagory}</label>
+								</>
+							)
+						})
+					}
+					<input key="no-selection" type="radio" name="catagory" value="" checked="checked" onChange={handleOnChange}></input>
+					<label>none</label>
 			</form>
 		</div>
 	)
